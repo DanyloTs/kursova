@@ -1,0 +1,45 @@
+{% extends 'partials/base.html' %}
+{% block title %} Працівники {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            <table class="table bg-white">
+                <thead class="bg-dark">
+                    <tr class="text-white">
+                        <th scope="col">#</th>
+                        <th scope="col">Ім'я</th>
+                        <th scope="col">Прізвище</th>
+                        <th scope="col">Тег</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><a class="btn btn-dark btn-sm" href="">Переглянути</a></th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a class="btn btn-dark btn-sm" href="">Переглянути</a></th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a class="btn btn-dark btn-sm" href="">Переглянути</a></th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+{%endblock%}
