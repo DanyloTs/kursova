@@ -1,9 +1,12 @@
 from django.contrib import admin
 from .models import Product
-# Register your models here.
+from django.contrib.auth.models import Group
 
+admin.site.site_header = 'Курсова робота'
 
-admin.site.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'category', 'quanity',)
+    list_filter = ('category', 'quanity')
 
-
+admin.site.register(Product, ProductAdmin)
 
