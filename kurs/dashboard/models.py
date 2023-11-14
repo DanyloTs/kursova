@@ -21,7 +21,7 @@ class Product(models.Model):
      
 
     def __str__(self):
-        return f'{self.category}  {self.name} Кількість: {self.quanity}'
+        return f'{self.name}'
     
 
 class Order(models.Model):
