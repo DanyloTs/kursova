@@ -12,6 +12,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 class OrderAdmin(admin.ModelAdmin):
     list_display = ('product', 'staff', 'date', 'order_quanity')
+    
 
 
 admin.site.register(Product, ProductAdmin)

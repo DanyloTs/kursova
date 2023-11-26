@@ -4,6 +4,9 @@
 
 <!--графік-->
 {% block content %}
+{% if user.is_authenticated and user.is_staff and user.is_superuser %}
+{% include 'partials/topnav.html' %}
+
 <div class="container">
     <div class="row my-5">
         <div class="col-md-6">
@@ -96,4 +99,10 @@
         </div>
     </div>
 </div>
+
+{% else %}
+  
+{% include 'dashboard/staff_index.html' %}
+
+{% endif %}
 {% endblock %}

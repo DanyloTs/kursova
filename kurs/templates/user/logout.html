@@ -1,0 +1,21 @@
+{% extends 'partials/base.html' %}
+{% block title %} Вихід {% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3">
+                <h3>Вихід</h3>
+                <hr>
+                <div class="alert alert-danger">
+                    <h4>Ви вийшли з системи</h4>
+                </div>
+                <a href="{% url 'user-login' %}">Вхід</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

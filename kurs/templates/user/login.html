@@ -1,0 +1,27 @@
+{% extends 'partials/base.html' %}
+
+{% block title %}Вхід{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-md-6 offset-md-3">
+            <div class="border p-3 bg-white p-4">
+                <h3>Вхід</h3>
+                <hr>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                    <br>
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+                    <br>
+                    <button class="btn btn-success" type="submit">Вхід</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
