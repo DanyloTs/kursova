@@ -9,27 +9,24 @@
             <div class="border bg-white p-3">
                 <h4>Додати товар</h4>
                 <hr>
-                <form action="">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Назва </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1"
-                            aria-describedby="emailHelp">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Кількість</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div class="form-group ">
-                        <label for="inputState">Категорія</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Виберіть</option>
-                            <option>...</option>
-                        </select>
-                    </div>
+                <form method="POST" style="max-width: 400px; margin: 0 auto;margin-bottom: 10px; padding: 20px;">
+                        {% csrf_token %}
+                    
+                        {{form.name.label_tag}}
+                        
+                        {{form.name}}
+                                        
+                        {{form.quanity.label_tag}} 
+                        {{form.quanity}}
+                    
+                        {{form.category.label_tag}}
+                        {{form.category}}
 
-                    <input class="btn btn-success btn-block" type="submit" value="Додати товар">
-
+                    <input  class="btn btn-success btn-block" type="submit" value="Додати товар">
+                
                 </form>
+                
+                
             </div>
         </div>
         <div class="col-md-8">
@@ -44,36 +41,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>
-                            <a class="btn btn-info btn-sm" href="">Редагувати</a>
-                            <a class="btn btn-danger btn-sm" href="">Видалити</a>
-                        </td>
-                    </tr>
-                    <tr>
+                    {% for item in items %}
                         <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.category }}</td>
+                        <td>{{ item.quanity }}</td>
                         <td>
-                            <a class="btn btn-info btn-sm" href="">Редагувати</a>
-                            <a class="btn btn-danger btn-sm" href="">Видалити</a>
+                            <a class="btn btn-info btn-sm" href="{% url 'dashboard-product-update' item.id %}">Редагувати</a>
+                            <a class="btn btn-danger btn-sm" href="{% url 'dashboard-product-delete' item.id %}">Видалити</a>
                         </td>
                     </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>
-                            <a class="btn btn-info btn-sm" href="">Редагувати</a>
-                            <a class="btn btn-danger btn-sm" href="">Видалити</a>
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

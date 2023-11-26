@@ -1,0 +1,34 @@
+{% extends 'partials/base.html' %}
+{% block title %} Редагування товару {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3">
+                <h3>Редагувати товар</h3>
+                <hr>
+             
+                <form method="POST" style="max-width: 200px;margin-bottom: 10px; padding: 0px; text-align: left;">
+                    {% csrf_token %}
+                
+                    {{form.name.label_tag}}
+                    
+                    {{form.name}}
+                                    
+                    {{form.quanity.label_tag}} 
+                    {{form.quanity}}
+                
+                    {{form.category.label_tag}}
+                    {{form.category}}
+
+                    <a style="margin-bottom: 10px; margin-top: 20px;" class="btn btn-danger" href="{%url 'dashboard-product'%}">Відмінити</a>
+                    <input style="margin-bottom: 10px; margin-top: 20px;" class="btn btn-primary" type="submit" value="Змінити">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
