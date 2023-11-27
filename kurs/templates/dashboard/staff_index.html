@@ -4,54 +4,47 @@
     <div class="row mt-4">
         <div class="col-md-4">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-dark text-white">
                     Створити запит
                 </div>
                 <div class="card-body">
-                    <form method="POST">
-                        
-                        <input class="btn btn-info btn-block" type="submit" value="Make Request">
+                    <form method="POST" style="max-width: 150px;margin-bottom: 10px; padding: 0px; text-align: left;">
+                        {% csrf_token %}
+                        {{form.product.label_tag}}
+                        {{form.product}}
+                        {{form.order_quanity.label_tag}}
+                        {{form.order_quanity}}
+                        <input style="margin-bottom: 10px; margin-top: 20px;" class="btn btn-success" type="submit" value="Створити запит">
                     </form>
                 </div>
             </div>
         </div>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-dark text-white">
                     Історія замовлень
                 </div>
                 <div class="card-body">
                     <table class="table bg-white">
-                        <thead class="bg-info text-white">
+                        <thead class="bg-dark text-white">
                             <tr>
                                 <th scope="col">Товар</th>
                                 <th scope="col">Категорія</th>
                                 <th scope="col">Кількість</th>
+                                <th scope="col">Дата</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            {% for order in orders %}
+                            {% if order.staff == user %}     
                             <tr>
-                                <td>Книга</td>
-                                <td>Stationary</td>
-                                <td>10</td>
+                                <td>{{ order.product.name }}</td>
+                                <td>{{order.product.category}}</td>
+                                <td>{{order.order_quanity}}</td>
+                                <td>{{order.date}}</td>
                             </tr>
-							<tr>
-                                <td>Книга</td>
-                                <td>Stationary</td>
-                                <td>10</td>
-                            </tr>
-							<tr>
-                                <td>Book</td>
-                                <td>Stationary</td>
-                                <td>10</td>
-                            </tr>
-							<tr>
-                                <td>Книга</td>
-                                <td>Stationary</td>
-                                <td>10</td>
-                            </tr>
-                            
+                            {% endif %}
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product
+from .models import Product, Order
 
 class ProductForm(forms.ModelForm):
     class Meta:
@@ -11,6 +11,13 @@ class ProductForm(forms.ModelForm):
             'category':'Категорія'
         }
 
-     
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ['product', 'order_quanity']
+        labels = {
+            'product':'Товар',
+            'order_quanity':'Кількість'
+        }
 
         

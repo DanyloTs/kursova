@@ -14,41 +14,23 @@
             <table class="table bg-white">
                 <thead class="bg-dark">
                     <tr class="text-white">
-                        <th scope="col">#</th>
                         <th scope="col">Товар</th>
                         <th scope="col">Категорія</th>
                         <th scope="col">Кількість</th>
-                        <th scope="col">Замовник</th>
+                        <th scope="col">Оформив Замовлення</th>
+                        <th scope="col">Дата Замовлення</th>
                     </tr>
                 </thead>
                 <tbody>
+                   {% for orders in orders %}
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>
-                            Broni
-                        </td>
+                        <td>{{ orders.product }}</td>
+                        <td>{{ orders.product.category }}</td>
+                        <td>{{orders.order_quanity}}</td>
+                        <td>{{orders.staff}}</td>
+                        <td>{{orders.date}}</td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>
-                            Kenneth
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>
-                            Cecilia
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
