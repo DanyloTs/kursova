@@ -11,6 +11,9 @@ from django.contrib.auth.models import User
 def index(request):
     orders = Order.objects.all()
     products = Product.objects.all()
+    order_count = Order.objects.all().count()
+    items_count = Product.objects.all().count()
+    workers_count = User.objects.all().count()
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
@@ -24,6 +27,9 @@ def index(request):
         'orders':orders,   
         'form':form,
         'products':products,
+        'order_count':order_count,
+        'items_count':items_count,
+        'workers_count':workers_count,
     }
     return render(request, 'dashboard/index.html', context)
 
