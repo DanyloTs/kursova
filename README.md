@@ -1,3 +1,22 @@
-Курсова робота студента ФеС-22 Цебра Д.А. з курсу "Бази даних та знань" на тему "Створення веб-додакту для керування складом магазину одягу" Python+My SQL
+# 🧾 Warehouse Management System
 
-In this project I implemented CRUD functionality to manage warehouse for clothes store, also I created dashboard that shows information about total number of goods and employees also added graphs to visualize information
+A course project developed for the **"Databases and Knowledge"** subject.  
+This application allows users to manage a warehouse system for a clothing store, including tracking goods and employees through a user-friendly web interface connected to a MySQL database.
+
+---
+
+## 📦 Features
+
+- ✅ Add, view, edit, and delete products
+- ✅ Add and manage employee records
+- 📊 View dashboard with total product and employee counts
+- 📈 Visual statistics using charts/graphs
+- 🔒 Simple authentication layer 
+---
+
+## 🛠️ Built With
+
+- **Python** – core backend logic
+- **MySQL** – database for storing warehouse and employee data
+- **HTML & CSS** – for front-end interface
+- **Django Framework** - as back-end framework
