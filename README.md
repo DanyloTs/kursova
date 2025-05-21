@@ -1,7 +1,7 @@
 # 🧾 Warehouse Management System
 
 A course project developed for the **"Databases and Knowledge"** subject.  
-This application allows users to manage a warehouse system for a clothing store, including tracking goods and employees through a user-friendly web interface connected to a MySQL database.
+This application allows users to manage a warehouse system for a cloth store, including tracking goods and employees through a user-friendly web interface connected to a MySQL database.
 
 ---
 
